@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Video Recommendations</title>
+</head>
+<body>
+  <h1>Video Recommendations</h1>
+  <label>
+    User ID:
+    <input type="text" id="userInput" placeholder="user_1">
+  </label>
+  <label>
+    Count:
+    <input type="number" id="nInput" value="5" min="1" max="20">
+  </label>
+  <button id="go">Go</button>
+
+  <ul id="results"></ul>
+
+  <script>
+  document.getElementById('go').onclick = () => {
+    const user = document.getElementById('userInput').value || 'user_1';
+    const n    = document.getElementById('nInput').value || 5;
+    console.log("Button clicked, attempting fetch for", user, "count", n);
+    fetch(`/recommendations?user_id=${user}&n=${n}`)
+      .then(r => r.json())
+      .then(data => {
+        const ul = document.getElementById('results');
+        ul.innerHTML = '';
+        data.recommendations.forEach((vid,i) => {
+          const li = document.createElement('li');
+          li.textContent = `${i+1}. ${vid}`;
+          ul.appendChild(li);
+        });
+      })
+      .catch(_ => alert('Fetch error—check console'));
+  };
+</script>
+
+</body>
+</html>

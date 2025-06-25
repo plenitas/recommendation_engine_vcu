@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    command: ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--reload"]
+    volumes:
+      - .:/workspace
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: rec
+      POSTGRES_PASSWORD: recpass
+      POSTGRES_DB: recdb
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:6
+    ports:
+      - "6379:6379"
