@@ -25,7 +25,7 @@
     document.getElementById('go').onclick = () => {
       const user = document.getElementById('userInput').value || 'user_1';
       const n    = document.getElementById('nInput').value || 5;
-      fetch(`${API_BASE}/recommendations?user_id=${user}&n=${n}`)
+      fetch(`/recommendations?user_id=${user}&n=${n}`)
         .then(r => r.json())
         .then(data => {
           const ul = document.getElementById('results');

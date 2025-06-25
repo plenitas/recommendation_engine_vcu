@@ -1,0 +1,3 @@
+### Top-5 recommendations for user_1
+GET http://127.0.0.1:8000/recommendations?user_id=user_1&n=5
+Accept: application/json
