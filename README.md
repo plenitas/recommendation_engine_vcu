@@ -5,6 +5,10 @@ video recommendation system can work completely in the browser.  Users can be
 selected from the landing page, then a video can be chosen.  Ten seconds into
 playback the page will suggest another video based on the selected user's
 preferences and prior watch history (stored in the browser's `localStorage`).
+The demo ships with ten example users who each have a pre-defined watch
+history.  Five sample videos are included and recommendations are generated
+using the tags associated with each video and what every user has watched in
+the past.
 
 ## Running locally
 

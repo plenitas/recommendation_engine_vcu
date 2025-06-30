@@ -1,7 +1,14 @@
 const users = {
-    Alice: {likes: ['adventure', 'sci-fi'], history: []},
-    Bob: {likes: ['comedy', 'drama'], history: []},
-    Charlie: {likes: ['documentary'], history: []}
+    Alice:   {likes: ['adventure', 'sci-fi'], history: ['vid1']},
+    Bob:     {likes: ['comedy', 'drama'], history: ['vid2', 'vid4']},
+    Charlie: {likes: ['documentary'], history: ['vid3']},
+    Diana:   {likes: ['romance', 'drama'], history: ['vid4']},
+    Ethan:   {likes: ['education', 'documentary'], history: ['vid5', 'vid3']},
+    Fiona:   {likes: ['adventure'], history: ['vid1']},
+    George:  {likes: ['comedy'], history: ['vid2']},
+    Hannah:  {likes: ['adventure', 'education'], history: ['vid5']},
+    Ian:     {likes: ['drama', 'sci-fi'], history: ['vid1', 'vid4']},
+    Jenny:   {likes: ['documentary', 'comedy'], history: ['vid3', 'vid2']}
 };
 
 function loadUserHistory(userId) {
@@ -23,7 +30,9 @@ function saveUserHistory(userId) {
 const videos = [
     {id: 'vid1', title: 'Adventure in Space', url: 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4', tags: ['adventure', 'sci-fi']},
     {id: 'vid2', title: 'Funny Times', url: 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4', tags: ['comedy']},
-    {id: 'vid3', title: 'Nature Documentary', url: 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4', tags: ['documentary']}
+    {id: 'vid3', title: 'Nature Documentary', url: 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4', tags: ['documentary']},
+    {id: 'vid4', title: 'Drama on Stage', url: 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4', tags: ['drama', 'romance']},
+    {id: 'vid5', title: 'Science Facts', url: 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4', tags: ['education', 'documentary']}
 ];
 
 function getQueryParam(name) {
